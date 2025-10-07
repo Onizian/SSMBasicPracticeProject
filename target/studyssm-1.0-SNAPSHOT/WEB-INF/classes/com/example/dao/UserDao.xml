@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.UserDao"><!--对应Mapper接口的全限定名-->
+<!--    <resultMap id="userMap" type="com.example.pojo.Userdb">-->
+<!--        <id property="id" column="id" />-->
+<!--        <id property="username" column="username" />-->
+<!--        <id property="password" column="password" />-->
+<!--    </resultMap>-->
+    <!--查询所有用户-->
+    <select id="findAll" resultType="com.example.pojo.Userdb">
+        SELECT * FROM user;
+    </select>
+    <!--根据ID查询用户-->
+    <select id="findById" parameterType="Integer" resultType="com.example.pojo.Userdb">
+        SELECT * FROM user Where id = #{id};
+    </select>
+    <!--根据ID更新用户信息-->
+    <update id="updateById" parameterType="com.example.pojo.Userdb">
+        update user set username = #{username}, password = #{password} where id = #{id};
+    </update>
+    <!--根据ID删除用户信息-->
+    <delete id="deleteById" parameterType="int">
+        delete from user where id = #{id};
+    </delete>
+    <!--添加用户-->
+    <insert id="add" parameterType="com.example.pojo.Userdb">
+        insert into user(username, password) values (#{username}, #{password});
+    </insert>
+</mapper>

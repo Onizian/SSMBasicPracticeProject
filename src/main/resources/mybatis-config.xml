@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--配置环境-->
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <typeAliases>
+        <!--别名-->
+        <package name="com.example.pojo"/>
+    </typeAliases>
+<!--    <mappers>-->
+<!--        &lt;!&ndash;配置Mapper&ndash;&gt;-->
+<!--        <mapper resource="com/example/dao/UserDao.xml" />-->
+<!--    </mappers>-->
+</configuration>
